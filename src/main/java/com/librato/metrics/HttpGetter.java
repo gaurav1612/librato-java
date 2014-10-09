@@ -20,5 +20,7 @@ public interface HttpGetter {
     * @throws IOException
     */
     Future<Response> get(String userAgent) throws IOException;
+    
+    public void close();
 
 }

@@ -18,6 +18,7 @@ public class NingHttpGetter implements HttpGetter {
 	        this.authHeader = authHeader;
 	        this.apiUrl = apiUrl;
 	    }
+	   
 
 	    /**
 	     * Return a new poster with the correct authentication header.
@@ -80,6 +81,11 @@ public class NingHttpGetter implements HttpGetter {
 	    	builder.addHeader("User-Agent", userAgent);
 	    	builder.addHeader("Content-Type", "application/json");
 	    	return new FutureAdapter(builder.execute());
+		}
+
+		public void close() {
+			// TODO Auto-generated method stub
+			this.httpClient.close();
 		}
 		
 
