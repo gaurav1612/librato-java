@@ -21,7 +21,11 @@ public class NingHttpPoster implements HttpPoster {
         this.authHeader = authHeader;
         this.apiUrl = apiUrl;
     }
-
+    
+    /**
+     * Close the http client
+     */
+  
     /**
      * Return a new poster with the correct authentication header.
      *
@@ -86,4 +90,9 @@ public class NingHttpPoster implements HttpPoster {
         builder.setBody(payload);
         return new FutureAdapter(builder.execute());
     }
+
+	public void close() {
+		// TODO Auto-generated method stub
+		this.httpClient.close();
+	}
 }

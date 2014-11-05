@@ -24,4 +24,6 @@ public interface HttpPoster {
      * @throws IOException on IO-related error
      */
     Future<Response> post(String userAgent, String payload) throws IOException;
+    
+    public void close();
 }
